@@ -13,7 +13,7 @@ function Player(name) {
   this.name = name;
   this.totalScore = 0;
   this.turnScore = 0;
-  this.playerId = 0;
+  // this.playerId = 0;
   // this.activePlayer = false; 
 }
 
@@ -47,3 +47,9 @@ Player.prototype.hold = function () {
 
 
 //UI Logic
+
+$(document).ready(function() {
+  $("#names").submit(function(event) {
+    event.preventDefault();
+  }
+}
