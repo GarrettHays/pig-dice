@@ -1,9 +1,9 @@
 //Business Logic
-const turnArray = []
-const totalArray = []
+const turnArray = [];
+const totalArray = [];
 
-const player1 = new Player(0, 0);
-const player2 = new Player(0, 0);
+const player1 = new Player();
+const player2 = new Player();
 
 function dieRoll(){
   return Math.floor(Math.random() * (7-1) + 1);
@@ -13,34 +13,36 @@ function Player(name) {
   this.name = name;
   this.totalScore = 0;
   this.turnScore = 0;
-  this.activePlayer = false; 
+  this.playerId = 0;
+  // this.activePlayer = false; 
 }
 
 Player.prototype.rolling = function() {
   let roll = dieRoll();
 
-  if (dieRoll !== 1){
+  if (roll === 1) {
+    turnArray.splice(0, turnArray.length);
+    roll = "Whoops you rolled a 1!";
+  } else { (roll != 1) 
     turnArray.push(roll);
-  } else {
-    turnArray = 0;
-    return roll = "Whoops you rolled a 1!"; 
   }
   return roll;
 }
 
 Player.prototype.addTurnScore = function(){
-  for (let i = 0, sum = 0; i < turnArray.length; i++); {
-    this.turnScore = sum;
-    return sum;
+  for (let i = 0; i < turnArray.length; i++) {
+    this.turnScore += turnArray[i];
   }
+  return this.turnScore;
 }
 
 Player.prototype.hold = function () {
-  this.turnScore += this.totalScore;
-  return this.totalScore;
+  turnArray.splice(0, turnArray.length);
+  turnScore = 0
+  return this.totalScore += this.turnScore;
 }
 
-player1.rolling();
+// player1.rolling();
 
 
 
