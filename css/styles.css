@@ -6,3 +6,37 @@
 .btn:hover {
   background-color: springgreen;
 } 
+
+#play-two {
+  display: none;
+}
+
+#hold-two {
+  display: none;
+}
+
+#player-one {
+  height: 300px;
+  margin: 10px;
+border:solid 5px white;
+background-color:white;
+}
+
+#player-two {
+  height: 300px;
+  margin: 10px;
+  border:solid 5px white;
+  background-color:white;
+}
+
+#names {
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  border:solid 5px white;
+  background-color:white;
+}
+
+.container {
+  padding: auto;
+}
